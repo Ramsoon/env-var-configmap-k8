@@ -1,0 +1,13 @@
+# claim file
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: host-pvc 
+spec:
+  volumeName: host-pv # use same name as in host-pv
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources: # counterpath to the capacity in pv
+    requests:
+      storage: 1Gi
